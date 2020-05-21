@@ -1,19 +1,77 @@
+/* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* variables */
+:root{
+  --bg-primary: #dadada;
+}
+
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-primary);
 }
 
-ul {
-  list-style: none;
-  max-width: 600px;
+main {
+  display: flex;
+  justify-content: center;
 }
 
-li {
-  border: 1px solid;
+.container {
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
+  border-radius: 60px;
+  background: var(--bg-primary);
+  box-shadow:  30px 30px 77px #c9c9c9, 
+             -30px -30px 77px #ebebeb;
+  
+}
+
+.container input {
+  border-radius: 40px;
+  line-height: 1.5rem;
+}
+
+.container input:first-child {
+  width: 80%;
+  margin: 20px 0 5px 0;
+}
+
+.container input:nth-child(2) {
+  width: 60%;
+  margin: 0 0 5px 0;
+}
+
+.container > button:first-of-type {
+  border-radius: 40px;
+  width: 40%;
+}
+
+
+.container > button:last-of-type {
+  border-radius: 40px;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+
+/* Task item style */
+ul {
+  list-style: none;
+  width: 100%;
+  transform: translateX(1px);
+  /* max-width: 600px; */
+}
+
+li {
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* move due to li styling? */
+  transform: translateX(-21px);
 }
 
 h1 {
@@ -27,9 +85,9 @@ h1 {
 }
 
 /* first button */
-li button:first-of-type {
+li > button:first-of-type {
   color: white;
-  background-color: brown;
+  background-color: var(--bg-primary);
 }
 
 
@@ -37,7 +95,7 @@ li button:first-of-type {
 /* select all but the first - .taskBtn proceeded by .taskBtn*/
 li .taskBtn ~ .taskBtn {
   color: white;
-  background-color: green;
+  background-color: var(--bg-primary);
 }
 
  /* Completed class task */
