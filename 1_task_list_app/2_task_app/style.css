@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+  max-width: 600px;
+}
+
+li {
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
+/* Task buttons  */
+.taskBtn {
+  margin: 1% 0;
+  width: 25%;
+}
+
+/* first button */
+li button:first-of-type {
+  color: white;
+  background-color: brown;
+}
+
+
+/* alter  li .taskBtn:nth-of-type(2) */
+/* select all but the first - .taskBtn proceeded by .taskBtn*/
+li .taskBtn ~ .taskBtn {
+  color: white;
+  background-color: green;
+}
+
+ /* Completed class task */
+.completed {
+  color: #808080;
+}
+.completed h1{
+  text-decoration: line-through;
+}
+
+.completed .taskBtn:nth-of-type(2) {
+  background-color: orange;
+}
