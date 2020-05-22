@@ -64,16 +64,19 @@ function createTask() {
   liElem.dataset.priority = priorityInput.value
 
   const delBtn = document.createElement("button");
-  delBtn.className = "taskBtn";
-  delBtn.innerText = "Remove";
+  delBtn.className = "fa fa-remove";
   delBtn.addEventListener("click", removeTask);
 
   const doneBtn = document.createElement("button");
-  doneBtn.className = "taskBtn";
-  doneBtn.innerText = "Completed";
+  doneBtn.className = "fa fa-check";
+  // doneBtn.innerText = "Completed";
   doneBtn.addEventListener("click", completedTask);
 
-  const arrElems = [content, priority, delBtn, doneBtn];
+  const editBtn = document.createElement("button");
+  editBtn.className = "fa fa-edit";
+  editBtn.addEventListener("click", editTask);
+
+  const arrElems = [content, priority, delBtn, doneBtn, editBtn];
 
   arrElems.forEach((e) => liElem.appendChild(e));
 
@@ -86,20 +89,28 @@ function removeTask() {
 }
 
 function completedTask() {
-  console.log(this.dataset.counter);
+  // console.log(this.dataset.counter);
   // convert string to num
   let counter = Number(this.dataset.counter);
 
   if (!counter || counter === 0) {
     this.dataset.counter = 1;
     this.parentElement.classList.add("completed");
-    this.innerText = "Uncompleted";
+    this.classList.add("fa-mail-reply");
+    this.classList.remove('fa-checked');
+    // this.innerText = "Uncompleted";
   } else {
     this.dataset.counter = 0;
+    this.classList.remove("fa-mail-reply");
+    this.classList.add('fa-checked');
     this.parentElement.classList.remove("completed");
-    this.innerText = "Completed";
+    // this.innerText = "Completed";
   }
   taskCounterFunc();
+}
+
+function editTask() {
+  console.log('editTask')
 }
 
 function removeAllCompleted() {
