@@ -6,9 +6,22 @@
 }
 
 
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-primary);
+}
+
+input {
+    border:none;
+    /* background-image:none; */
+    /* background-color:transparent; */
+    /* -webkit-box-shadow: none; */
+    /* box-shadow: none; */
+}
+
+button {
+  border: none;
 }
 
 main {
@@ -21,11 +34,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  /* width: 300px; */
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 60px;
-  background: var(--bg-primary);
+  /* background: var(--bg-primary);
   box-shadow:  30px 30px 77px #c9c9c9, 
-             -30px -30px 77px #ebebeb;
+             -30px -30px 77px #ebebeb; */
   
 }
 
@@ -63,15 +78,24 @@ ul {
   width: 100%;
   transform: translateX(1px);
   /* max-width: 600px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li {
+  width: 200px;
+  height: 200px;
   /* border: 1px solid; */
+  margin: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* move due to li styling? */
-  transform: translateX(-21px);
+  /* transform: translateX(-21px); */
+  border-radius: 50px;
+  background: #dadada;
+  box-shadow:  20px 20px 40px #b9b9b9, 
+               -20px -20px 40px #fbfbfb;
 }
 
 h1 {
@@ -101,6 +125,10 @@ li .taskBtn ~ .taskBtn {
  /* Completed class task */
 .completed {
   color: #808080;
+  border-radius: 50px;
+  background: #dadada;
+  box-shadow: inset 20px 20px 40px #b9b9b9, 
+            inset -20px -20px 40px #fbfbfb;
 }
 .completed h1{
   text-decoration: line-through;
