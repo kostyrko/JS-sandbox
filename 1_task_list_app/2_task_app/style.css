@@ -12,17 +12,19 @@ body {
   background-color: var(--bg-primary);
 }
 
+
 input {
-    border:none;
-    background-image:none;
-    background-color:transparent;
-    border-bottom: 1px solid black;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(133, 133, 133, 0.952);
     /* -webkit-box-shadow: none; */
     /* box-shadow: none; */
 }
 
 button {
   border: none;
+  outline: none;
 }
 
 
@@ -47,6 +49,8 @@ main {
 
 .mainBtn {
   margin: 8px;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .input-container {
@@ -65,6 +69,12 @@ main {
   text-align: center;
 }
 
+.input-container > input:focus {
+  outline: none;
+  border-bottom: 2px solid rgba(133, 133, 133);
+  /* outline-style: inset; */
+}
+
 .input-container input:first-child {
   width: 80%;
   margin: 20px 0 5px 0;
@@ -75,17 +85,44 @@ main {
   margin: 0 0 5px 0;
 }
 
-.input-container > button:first-of-type {
-  border-radius: 40px;
-  width: 40%;
+::placeholder{
+  color: rgba(0, 0, 0, 0.63);
 }
 
-.input-container > button:last-of-type {
+.input-container > button {
   border-radius: 40px;
-  width: 60%;
+  width: 40%;
+  box-shadow: rgb(177, 169, 169) 0px 1px 1px;
+}
+
+
+.input-container > button:last-of-type {
   margin-bottom: 10px;
   bottom: 0px;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
+
+.input-container > button:hover {
+  background-color: rgb(230, 231, 223);
+}
+
+.input-container > button:active {
+  /* background-color: rgb(207, 233, 9); */
+  outline: 0;
+  box-shadow: inset 2px 2px 4px #b9b9b9, 
+            inset -2px -2px 4px #fbfbfb;
+}
+
+.input-container > button:focus {
+  width: 45%;
+  font-size: 1rem;
+}
+
+.input-container > button:last-of-type:focus {
+  font-size: 0.9rem;
+}
+
 
 .input-container .counter {
   margin-top: 10px;
@@ -128,6 +165,11 @@ li h1 {
   text-align: center;
 }
 
+li input {
+  text-align: center;
+  width: 80%;
+}
+
 /* Task buttons  */
 
 .btnsContainer {
@@ -137,7 +179,7 @@ li h1 {
 
 .taskBtn {
   color: white;
-  background: var(--bg-primary);
+  background: transparent;
   margin-top: 5px;
   transition: transform 0.25s ease;
   font-size: 1rem;
@@ -147,6 +189,10 @@ li h1 {
 .taskBtn:hover{
   color: black;
   transform: translateY(1px); 
+}
+
+.taskBtn:focus {
+  color: black;
 }
 
  /* Completed class task */
@@ -159,5 +205,9 @@ li h1 {
 }
 .completed h1{
   text-decoration: line-through;
+}
+
+.completed .taskBtn{
+  color: #777575b7;
 }
 
