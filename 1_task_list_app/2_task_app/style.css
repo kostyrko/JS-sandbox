@@ -25,6 +25,7 @@ button {
   border: none;
 }
 
+
 main {
   display: flex;
   justify-content: center;
@@ -35,77 +36,96 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  min-width: 350px;
+  max-width: 80vw;
+  min-height: 50vh;
   border-radius: 60px;
-  /* background: var(--bg-primary);
-  box-shadow:  30px 30px 77px #c9c9c9, 
-             -30px -30px 77px #ebebeb; */
-  
+  background: var(--bg-primary);
+  box-shadow:  10px 10px 50px #c9c9c9b6, 
+             -20px -20px 50px #ebebeb;
 }
 
-.container input {
+.mainBtn {
+  margin: 8px;
+}
+
+.input-container {
+  /* border: 1px solid green; */
+  width: 50%;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.input-container input {
   /* border-radius: 40px; */
   line-height: 1.5rem;
   text-align: center;
 }
 
-.container input:first-child {
+.input-container input:first-child {
   width: 80%;
   margin: 20px 0 5px 0;
 }
 
-.container input:nth-child(2) {
+.input-container input:nth-child(2) {
   width: 60%;
   margin: 0 0 5px 0;
 }
 
-.container > button:first-of-type {
+.input-container > button:first-of-type {
   border-radius: 40px;
   width: 40%;
 }
 
-
-.container > button:last-of-type {
+.input-container > button:last-of-type {
   border-radius: 40px;
   width: 60%;
   margin-bottom: 10px;
+  bottom: 0px;
 }
 
+.input-container .counter {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
 
 /* Task item style */
 ul {
+  /* border: 1px solid blue; */
   list-style: none;
-  width: 100%;
+  /* width: 100%; */
   transform: translateX(1px);
   /* max-width: 600px; */
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 li {
-  width: 200px;
-  height: 200px;
-  /* border: 1px solid; */
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 80vw;
   margin: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* move due to li styling? */
-  /* transform: translateX(-21px); */
+  transform: translateX(-21px);
   border-radius: 50px;
   background: #dadada;
-  box-shadow:  20px 20px 40px #b9b9b9, 
-               -20px -20px 40px #fbfbfb;
+  box-shadow:  10px 10px 25px #b9b9b95d, 
+               -10px -10px 25px #fbfbfb75;
 }
 
-h1 {
-  font-size: 1.2rem;
+li h1 {
+  font-size: 1rem;
+  margin: 5%;
 }
 
 /* Task buttons  */
-
 
 /* first button */
 li > button:first-of-type {
@@ -116,15 +136,17 @@ li > button:first-of-type {
 
 /* alter  li .taskBtn:nth-of-type(2) */
 /* select all but the first - .taskBtn proceeded by .taskBtn*/
-li .taskBtn ~ .taskBtn {
-  color: white;
-  background-color: var(--bg-primary);
-}
-
-.fa{
+.taskBtn {
   color: white;
   background: transparent;
   margin-top: 5px;
+  transition: transform 0.25s ease;
+}
+
+
+.fa:hover{
+  color: black;
+  transform: translateY(1px); 
 }
 
  /* Completed class task */
@@ -139,6 +161,3 @@ li .taskBtn ~ .taskBtn {
   text-decoration: line-through;
 }
 
-.completed .taskBtn:nth-of-type(2) {
-  background-color: orange;
-}

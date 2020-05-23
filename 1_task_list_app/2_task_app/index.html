@@ -10,15 +10,14 @@
 <body>
 <main>
   <div class="container">
-    <input id="taskInput" placeholder="Add your task here">
-    <input id="priorityInput" placeholder="Set priority form 1 to 10">
-    <button id="addTaskButton">Add task</button>
-
-    <div class="counter">Tasks left to finish: <span id="counter"></span></div>
-
+    <div class="input-container">
+      <input id="taskInput" placeholder="Add your task here">
+      <input id="priorityInput" placeholder="Set priority form 1 to 10">
+      <button id="addTaskButton" class='mainBtn'>Add task</button>
+      <button id="removeFinishedTasksButton" class='mainBtn'>Remove finished tasks</button>
+      <div class="counter">Tasks left to finish: <span id="counter"></span></div>
+    </div>
     <ul id="taskList"></ul>
-
-    <button id="removeFinishedTasksButton">Remove finished tasks</button>
   </div>
 </main>
 <script src="app.js"></script>
