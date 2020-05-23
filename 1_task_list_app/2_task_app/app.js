@@ -63,7 +63,7 @@ function createTask() {
   const content = document.createElement("h1");
   content.innerText = taskInput.value;
 
-  const priority = document.createElement("h5");
+  const priority = document.createElement("p");
   priority.innerText = `Priority ${priorityInput.value}`;
   liElem.dataset.priority = priorityInput.value;
 

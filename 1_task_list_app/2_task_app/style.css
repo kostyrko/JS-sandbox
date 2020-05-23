@@ -165,6 +165,12 @@ li h1 {
   text-align: center;
 }
 
+li p {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 12%;
+}
+
 li input {
   text-align: center;
   width: 80%;
@@ -209,5 +215,9 @@ li input {
 
 .completed .taskBtn{
   color: #777575b7;
+}
+
+.fa-save {
+  color: gray;
 }
 
