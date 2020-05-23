@@ -112,6 +112,8 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
   /* move due to li styling? */
   transform: translateX(-21px);
   border-radius: 50px;
@@ -123,28 +125,26 @@ li {
 li h1 {
   font-size: 1rem;
   margin: 5%;
+  text-align: center;
 }
 
 /* Task buttons  */
 
-/* first button */
-li > button:first-of-type {
-  color: white;
-  background-color: var(--bg-primary);
+.btnsContainer {
+  position: absolute;
+  bottom: 5%;
 }
 
-
-/* alter  li .taskBtn:nth-of-type(2) */
-/* select all but the first - .taskBtn proceeded by .taskBtn*/
 .taskBtn {
   color: white;
-  background: transparent;
+  background: var(--bg-primary);
   margin-top: 5px;
   transition: transform 0.25s ease;
+  font-size: 1rem;
 }
 
 
-.fa:hover{
+.taskBtn:hover{
   color: black;
   transform: translateY(1px); 
 }
