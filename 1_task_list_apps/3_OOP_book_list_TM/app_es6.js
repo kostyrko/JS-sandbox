@@ -54,6 +54,56 @@ class UI {
 }
 
 
+// Local storage class
+
+class Store {
+  static getBooks() {
+    let books;
+    if(localStorage.getItem('books') === null) {
+      books = []
+    } else {
+      books = JSON.parse(localStorage.getItem('books'))
+    }
+    return books
+  }
+
+  static displayBooks() {
+    // get books arr
+    const books = Store.getBooks();
+
+    books.forEach(function(book){
+      const ui = new UI;
+      // Add bok to UI
+      ui.addBookToList(book)
+    });
+  }
+
+  static addBook(book) {
+    // get books arr
+    const books = Store.getBooks();
+    // add book to books arr
+    books.push(book);
+    // save into storage
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(isbn){
+    // get books arr
+    const books = Store.getBooks();
+
+    books.forEach(function(book, index){
+      if(book.isbn === isbn){
+        books.splice(index, 1);
+      }
+    });
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
+
+// DOM load event listener
+document.addEventListener('DOMContentLoaded', Store.displayBooks)
+
+
 // Event listener for add book
 document.getElementById("book-form").addEventListener("submit", function (e) {
   // when submit create variables with input values
@@ -70,6 +120,8 @@ document.getElementById("book-form").addEventListener("submit", function (e) {
   } else {
     // Add a book do UI
     ui.addBookToList(book);
+    // add to local storage // metoda statyczna więc nie trzeba tworzyć obiektu store
+    Store.addBook(book);
     // show everything is ok
     ui.showAlert("Book Added!", "success");
     // clear fields
@@ -82,6 +134,9 @@ document.getElementById("book-form").addEventListener("submit", function (e) {
 document.getElementById("book-list").addEventListener("click", function (e) {
   const ui = new UI();
   ui.deleteBook(e.target);
+  // Remove using ISBN as an unique nr
+  console.log(e.target.parentElement.previousElementSibling.textContent)
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
   // Show message
   ui.showAlert("Book removed", "success");
   e.preventDefault();
