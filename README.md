@@ -15,4 +15,4 @@ JavaScript apps based on online tutorials
     2.1 [Weather app tutorial](https://www.youtube.com/watch?v=KqZGuzrY9D4) /
     [Weather app repo](https://github.com/CodeExplainedRepo/Weather-App-JavaScript) -> if problem with using this app in Ubuntu see [this topic](https://askubuntu.com/questions/810791/cant-get-geolocation-in-my-ubuntu-16-04-browsers-like-chrome-and-firefox) as well as [this one](https://stackoverflow.com/questions/44773259/html-geolocation-unknown-error-acquiring-position) for different approach
 
-    2.2 Chuck Norris joke generator (no org repo available online) - part of [Modern JavaScript From The Beginning](https://www.udemy.com/course/modern-javascript-from-the-beginning/) by [TraversyMedia](https://www.traversymedia.com/)
+    2.2 Chuck Norris joke generator (no org repo available online) - part of [Modern JavaScript From The Beginning](https://www.udemy.com/course/modern-javascript-from-the-beginning/) by [TraversyMedia](https://www.traversymedia.com/) with a small alteration (by [@kostyrko](https://github.com/kostyrko))
