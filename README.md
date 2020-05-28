@@ -2,7 +2,7 @@
 
 JavaScript apps based on online tutorials
 
-1. DOM (focused apps with) Local Storage apps 
+1. DOM (focused apps with) Local Storage 
 
     1.1 Task list [org repo here](https://github.com/bradtraversy/modern_js_udemy_projects/tree/master/tasklist_project) by [TraversyMedia](https://www.traversymedia.com/)
   
