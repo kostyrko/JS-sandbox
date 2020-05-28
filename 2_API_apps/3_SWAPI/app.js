@@ -1,5 +1,6 @@
 // https://swapi.dev/
 // https://swapi.dev/documentation
+// https://fontawesome.com/v4.7.0/icons/
 
 document.querySelector("button").addEventListener("click", findSomeone);
 const name    = document.querySelector(".name");
@@ -8,6 +9,7 @@ const mass    = document.querySelector(".mass");
 const birth   = document.querySelector(".birth");
 
 function findSomeone() {
+  loadingInfo();
   // randomize 88 stands for number of people in API
   let randomNum = Math.floor(Math.random() * 88 + 1);
   // add then as the request takes time = get and after you get it (then) use response.data etc
@@ -32,5 +34,12 @@ function updateInfoWithError() {
   name.innerText = 'This person is not available';
   height.innerText = '';
   mass.innerText = '';
+  birth.innerText = '';
+}
+
+function loadingInfo () {
+  name.innerHTML = '<i class="fa fa-spinner fa-spin fa-3x"></i>';
+  height.innerText = '';
+  mass.innerHTML = '';
   birth.innerText = '';
 }
