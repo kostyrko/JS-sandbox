@@ -15,7 +15,10 @@ function findSomeone() {
     .get(`https://swapi.dev/api/people/${randomNum}`)
     .then(function (response) {
       updateInfo(response.data);
-    });
+    }).catch(e =>{ // catch an error
+      // console.log('error')
+      updateInfoWithError();
+    })
 }
 
 function updateInfo(data) {
@@ -23,4 +26,11 @@ function updateInfo(data) {
   height.innerText = `Height: ${data.height}`;
   mass.innerText = `Mass: ${data.mass}`;
   birth.innerText = `Birth year: ${data.birth_year}`;
+}
+
+function updateInfoWithError() {
+  name.innerText = 'This person is not available';
+  height.innerText = '';
+  mass.innerText = '';
+  birth.innerText = '';
 }
