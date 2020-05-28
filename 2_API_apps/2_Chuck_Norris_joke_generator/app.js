@@ -1,6 +1,30 @@
-document.querySelector('.get-jokes').addEventListener('click', getJokes);
+document.querySelector('.get-jokes').addEventListener('click', getRandomJokes);
+document.querySelector('.get-nerdy-joke').addEventListener('click', getNerdyJoke);
 
-function getJokes(e) {
+
+function getNerdyJoke(e) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET',`http://api.icndb.com/jokes/random?limitTo=[nerdy]`, true);
+  xhr.onload = function() {
+    if(this.status === 200) {
+      const response = JSON.parse(this.responseText);
+      let output = ''
+      if (response.type === "success") {
+        output += `
+             <li>${response.value.joke}</li>
+             `;
+        response.value.joke
+      } else {
+        output += "<li>Something went wrong</li>";
+      }
+      document.querySelector('.nerd-joke').innerHTML = output
+    }
+  }
+  xhr.send();
+  e.preventDefault();
+}
+
+function getRandomJokes(e) {
   const number = document.querySelector('input[type="number"]').value;
 
   const xhr = new XMLHttpRequest();
@@ -8,10 +32,11 @@ function getJokes(e) {
   // true -> at the end to be asynchronous
   xhr.open('GET',`http://api.icndb.com/jokes/random/${number}`, true);
 
+
   xhr.onload = function() {
     if(this.status === 200) {
       const response = JSON.parse(this.responseText);
-      console.log(response)
+      // console.log(response)
 
       let output = ''
 
@@ -25,7 +50,7 @@ function getJokes(e) {
       } else {
         output += "<li>Something went wrong</li>";
       }
-      document.querySelector('.jokes').innerHTML = output
+      document.querySelector('.random-jokes').innerHTML = output
     }
   }
 

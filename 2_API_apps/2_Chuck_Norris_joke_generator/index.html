@@ -9,19 +9,35 @@
 </head>
 <body>
   <div class="container">
-    <h2>Chuck Norris Joke Generator</h2>
-    <p>and remember: "Chuck Norris can install a 64 bit OS on 32 bit machines." (joke id:554)</p>
+    <header>
+      <h2>Chuck Norris Joke Generator</h2>
+      <p>and remember: "Chuck Norris can install a 64 bit OS on 32 bit machines."</p>
+    </header>
+    <section>
+      <div>
+        <button class="get-nerdy-joke">Get a Nerdy Joke</button>
+      </div>
+    <ul class="nerd-joke"></ul>
+    </section>
+    <section>
       <form>
         <div>
-          <label for="number">Number of jokes</label>
+          <hr>
+          <h5>Get multiple random jokes</h5>
+          <label for="number">Pass a number</label>
           <input type="number" id="number">
-      </div>
-      <div>
-        <button class="get-jokes">Get Jokes</button>
-      </div>
-    </form>
-    <ul class="jokes"></ul>
+        </div>
+        <div>
+          <button class="get-jokes">Get Jokes</button>
+        </div>
+      </form>
+      <ul class="random-jokes"></ul>
+    </section> 
+    <footer>
+      <a href="http://www.icndb.com/api/">API website</a>
+    </footer>
   </div>
+  
 </body>
 <script src="app.js"></script>
 </html>
