@@ -18,3 +18,7 @@ JavaScript apps based on online tutorials
     2.2 Chuck Norris joke generator (no org repo available online) - part of [Modern JavaScript From The Beginning](https://www.udemy.com/course/modern-javascript-from-the-beginning/) by [TraversyMedia](https://www.traversymedia.com/) with a small alteration (by [@kostyrko](https://github.com/kostyrko))
 
     2.3 SWAPI -> [Star Wars API](https://www.youtube.com/watch?v=aISMFLKUC8o)
+
+3. Testing
+
+    3.1 Jest -> source video: [Jest - Napisz pierwszy test funkcji JavaScript](https://www.youtube.com/watch?v=gX440uva4NU) with a small alteration (by [@kostyrko](https://github.com/kostyrko)) to fit [JEST](https://jestjs.io/)
