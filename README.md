@@ -1,5 +1,7 @@
 # JS-apps
 
+#### Links will redirect You to to org. repos/sources/tutorials/authors
+
 JavaScript apps based on online tutorials
 
 1. DOM (focused apps with) Local Storage 
@@ -10,6 +12,8 @@ JavaScript apps based on online tutorials
 
     1.3. Object Oriented Project/Programing book list app - [org repo here](https://github.com/bradtraversy/modern_js_udemy_projects/tree/master/booklist) by [TraversyMedia](https://www.traversymedia.com/)
   
+---
+
 2. API (focused) apps
 
     2.1 [Weather app tutorial](https://www.youtube.com/watch?v=KqZGuzrY9D4) /
