@@ -40,6 +40,10 @@ figcaption,
   margin-top: 10px;
 }
 
+input {
+  text-align: center;
+}
+
 button,
 figcaption {
   margin-bottom: 20px;
@@ -49,14 +53,18 @@ button {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
+  color: white;
+  background-color: rgb(65, 62, 62);
+  border: 1px solid black;
 }
 
 button:hover {
   background-color: white;
+  color:black;
 }
 
 img {
   object-fit: cover;
   width: 100%;
-  filter: grayscale(40%);
+  filter: grayscale(20%);
 }
