@@ -1,13 +1,13 @@
 const createBtn = document.getElementById('create-btn')
 const deleteBtn = document.getElementById('delete-btn')
 const getBtn = document.getElementById('get-btn')
-// const updateBtn = document.getElementById('update-btn')
+const updateBtn = document.getElementById('update-btn')
 const userInfo = document.getElementById('user-info')
 
 createBtn.addEventListener('click', createUser)
 deleteBtn.addEventListener('click', deleteUser)
 getBtn.addEventListener('click', getUser)
-// updateBtn.addEventListener('click', updateUserInfo)
+updateBtn.addEventListener('click', updateUserInfo)
 
 
 const url = 'https://reqres.in/api/users';
@@ -70,24 +70,24 @@ function deleteUser () {
   xhr.send(null);
 }
 
-// function updateUserInfo () {
-//   const usrId = document.querySelector('.update-by-id').value
-//   const data = {};
-//   data.first_name = document.querySelector('.user-name--update').value
-//   const json = JSON.stringify(data);
-//   const xhr = new XMLHttpRequest();
-//   xhr.open("PUT", url+`/${usrId}`, true);
-//   xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-//   xhr.onload = function () {
-//     const user = JSON.parse(xhr.responseText);
-//     if (xhr.readyState == 4 && xhr.status == "201") {
-//       console.log(data.first_name)
-//       // userInfo.innerText = `User created
-//       // First name: ${user.firstname}, Last name: ${user.lastname}, Id: ${user.id}`
-//     } else {
-//       console.log('ups')
-//       console.error(user);
-//     }
-//   }
-//   xhr.send(json);
-// }
+function updateUserInfo () {
+  const usrId = document.querySelector('.update-by-id').value
+  const data = {};
+  data.first_name = document.querySelector('.user-name--update').value
+  const json = JSON.stringify(data);
+  const xhr = new XMLHttpRequest();
+  xhr.open("PUT", url+`/${usrId}`, true);
+  xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+  xhr.onload = function () {
+    const user = JSON.parse(xhr.responseText);
+    if (xhr.readyState == 4 && xhr.status == "200") {
+      console.log(data.first_name)
+      userInfo.innerText = `Name change to
+      ${data.first_name}`
+    } else {
+      console.log('ups')
+      console.error(user);
+    }
+  }
+  xhr.send(json);
+}
