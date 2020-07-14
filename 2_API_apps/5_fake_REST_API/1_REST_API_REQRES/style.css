@@ -1,0 +1,12 @@
+/* .get-user,
+.create-user,
+.delete-user {
+  border: 1px solid red;
+} */
+
+.user-info {
+  height: 200px;
+  /* border: 1px solid red; */
+  padding: 1vh;
+  /* text-align: center; */
+}
