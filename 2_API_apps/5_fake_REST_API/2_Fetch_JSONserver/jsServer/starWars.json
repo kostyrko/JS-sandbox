@@ -1,0 +1,26 @@
+{
+  "droids" : [
+      {
+          "id" : 0,
+          "name" : "D-O",
+          "class" : "unknown"
+      },
+      {
+          "id" : 1,
+          "name" : "BB-8",
+          "class" : "Astromech droid"
+      }
+  ],
+  "planets" : [
+      {
+          "id" : 0,
+          "planet" : "Tatooine",
+          "sector" : "Arkanis sector"
+      },
+      {
+          "id" : 1,
+          "planet" : "Coruscant",
+          "sector" : "Coruscant subsector"
+      }
+  ]
+}
