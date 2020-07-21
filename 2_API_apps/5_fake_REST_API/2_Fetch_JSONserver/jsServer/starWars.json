@@ -1,26 +1,76 @@
 {
-  "droids" : [
-      {
-          "id" : 0,
-          "name" : "D-O",
-          "class" : "unknown"
-      },
-      {
-          "id" : 1,
-          "name" : "BB-8",
-          "class" : "Astromech droid"
-      }
+  "droids": [
+    {
+      "id": 0,
+      "name": "D-O",
+      "class": "unknown"
+    },
+    {
+      "id": 1,
+      "name": "BB-8",
+      "class": "Astromech droid"
+    },
+    {
+      "id": 2,
+      "name": "R2-D2",
+      "class": "Astromech droid"
+    },
+    {
+      "id": 3,
+      "name": "C-3PO",
+      "class": "Protocol droid"
+    },
+    {
+      "id": 4,
+      "name": "ME-8D9",
+      "class": "Protocol droid"
+    },
+    {
+      "id": 5,
+      "name": "IG-88",
+      "class": "Assassin droid"
+    },
+    {
+      "id": 6,
+      "name": "DN-LD",
+      "class": "Power droid"
+    },
+    {
+      "id": 7,
+      "name": "MSE-6",
+      "class": "Utility droid"
+    },
+    {
+      "id": 8,
+      "name": "K-2SO",
+      "class": "Security droid"
+    },
+    {
+      "id": 9,
+      "name": "Viper Probot",
+      "class": "Probe droid"
+    },
+    {
+      "id": 12,
+      "name": "L3-37",
+      "class": "pilot droid"
+    },
+    {
+      "id": 15,
+      "name": "2-1B",
+      "class": "medical droid"
+    }
   ],
-  "planets" : [
-      {
-          "id" : 0,
-          "planet" : "Tatooine",
-          "sector" : "Arkanis sector"
-      },
-      {
-          "id" : 1,
-          "planet" : "Coruscant",
-          "sector" : "Coruscant subsector"
-      }
+  "planets": [
+    {
+      "id": 0,
+      "planet": "Tatooine",
+      "sector": "Arkanis sector"
+    },
+    {
+      "id": 1,
+      "planet": "Coruscant",
+      "sector": "Coruscant subsector"
+    }
   ]
 }
