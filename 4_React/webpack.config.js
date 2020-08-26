@@ -1,6 +1,6 @@
 const path = require("path");
-const entryPath = "1_hello_world/js";
-const outPath = "1_hello_world";
+const entryPath = "2_passing_data/js";
+const outPath = "2_passing_data";
 const entryFile = "app.js";
 
 module.exports = {
