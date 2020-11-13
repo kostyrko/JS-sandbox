@@ -1,13 +1,22 @@
 import React, {useEffect} from 'react';
-import {connect} from 'react-redux'
+
+import {useSelector, useDispatch} from 'react-redux'
 import {getAllDroids} from '../duck/operations'
 
-const DroidsContainer = ({droids,getAllDroids}) => {
-
+const DroidsContainer = (props) => {
+    const dispatch = useDispatch()
     useEffect(() => {
-        getAllDroids();
-        // console.log("ComponentDidMount");
-    },[])
+        dispatch(getAllDroids())
+
+        // dla przypomnienie - co się tam dzieje?
+        // dispatch({type: 'ADD_DROID', item: 'D-O'})
+    }, [])
+
+
+    // pobranie wycinka statu przy pomocy -> useSelector
+    const droids = useSelector((state) => state.droids);
+    console.log(droids);
+
 
 
     return (
@@ -18,19 +27,6 @@ const DroidsContainer = ({droids,getAllDroids}) => {
         </ul>
     );
 }
-// przyjmuje stan i zwraca obiekt z zawartością stanu znajdującą się pod kluczem droids
-const mapStateToProps = state => ({
-    droids : state.droids
-})
 
-// funkcja wywołująca funkcję dispatch z parametrem funkcji, która ma być wykonana
-const mapDispatchToProps = dispatch => ({
-    getAllDroids : ()=> dispatch(getAllDroids())
-})
-
-
-// funkcja connect
-// 1. argument - mapowanie elementów ze stora, które mają być przyjęte w komponencie jako propsy
-// 2. obiekt przyjmujący dane z API
-export default connect(mapStateToProps, mapDispatchToProps)(DroidsContainer);
+export default DroidsContainer;
 
