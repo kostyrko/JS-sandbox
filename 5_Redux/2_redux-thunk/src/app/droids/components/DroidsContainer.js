@@ -5,8 +5,8 @@ import {getAllDroids} from '../duck/operations'
 const DroidsContainer = ({droids,getAllDroids}) => {
 
     useEffect(() => {
-        console.log(getAllDroids());
-        console.log("ComponentDidMount");
+        getAllDroids();
+        // console.log("ComponentDidMount");
     },[])
 
 
