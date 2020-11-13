@@ -1,0 +1,11 @@
+{
+    "droidsClasses" : {
+        "listName": "Classes",
+        "list": ["Protocol droid", "Astromech droid", "Power droid", "Utility droid"]
+    },
+    "droidsTypes" : {
+        "listName": "Types",
+        "list": ["R2D2", "C3PO", "BB8"]
+    }
+    
+}

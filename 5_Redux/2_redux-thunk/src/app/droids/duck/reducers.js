@@ -1,8 +1,8 @@
 import types from './types'
 
 const INITIAL_STATE = {
-  droidsName: "Favorite",
-  list: ["R2D2", "C3PO", "BB8"],
+  droidsName: "Types",
+  list: [],
 };
 
 const droidsReducer = (state = INITIAL_STATE, action) => {

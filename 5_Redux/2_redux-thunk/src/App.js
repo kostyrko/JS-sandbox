@@ -1,22 +1,16 @@
-
+import React from 'react'
 import './App.css';
-import {createStore } from 'redux'
-import rootReducer from './reducers'
 
-import {droidActions} from './app/droids/duck'
+import DroidsContainer from './app/droids/components/DroidsContainer'
+import DroidsForm from './app/droids/components/DroidsForm'
 
-// ---------------------------- Store -----------------------
-
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-window.store = store 
-
-store.dispatch(droidActions.add('D-O'))
 
 
 function App() {
   return (
     <div className="App">
-      
+      <DroidsContainer/>
+      <DroidsForm/>
     </div>
   );
 }
