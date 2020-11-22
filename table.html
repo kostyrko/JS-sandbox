@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 5px 10px
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- <table>
+        <thead>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+    </table> -->
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">Model</th>
+            <th scope="col">Planet</th>
+            <th scope="col">Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>R2D2</td>
+            <td>Naboo</td>
+            <td>Droid</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>C3PO</td>
+            <td>Tatooine</td>
+            <td rowspan="2">Protocol droid</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>ME-8D9</td>
+            <td>Takodana</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="4"> Star wars</td>
+            </tr>
+        </tfoot>
+        
+    </tbody>
+</table>
+</body>
+</html>

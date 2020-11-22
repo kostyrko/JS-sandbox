@@ -65,12 +65,17 @@
     {
       "id": 0,
       "planet": "Tatooine",
-      "sector": "Arkanis sector"
+      "sector": "Arkanis"
     },
     {
       "id": 1,
       "planet": "Coruscant",
-      "sector": "Coruscant subsector"
+      "sector": "Coruscant"
+    },
+    {
+      "id": 2,
+      "planet": "Naboo",
+      "sector": "Chommel"
     }
   ]
 }
