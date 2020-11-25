@@ -28,7 +28,8 @@
     {
       "id": 5,
       "name": "IG-88",
-      "class": "Assassin droid"
+      "class": "Assassin droid",
+      "appearance": "The Empire Strikes Back"
     },
     {
       "id": 6,
@@ -53,13 +54,36 @@
     {
       "id": 12,
       "name": "L3-37",
-      "class": "pilot droid"
+      "class": "Pilot droid"
+    },
+    {
+      "id": 13,
+      "name": "BB-9E",
+      "class": "Astromech droid"
+    },
+    {
+      "id": 14,
+      "name": "Unidentified ferry droid",
+      "class": "Ferry droid",
+      "appearance": "Mandalorian series"
     },
     {
       "id": 15,
       "name": "2-1B",
-      "class": "medical droid"
-    }
+      "class": "Medical droid"
+    },
+    {
+      "id": 16,
+      "name": "4-LOM",
+      "class": "Protocol droid",
+      "appearance": "The Empire Strikes Back"
+    },
+    {
+      "id": 17,
+      "name": "IG-11",
+      "class": "Assassin droid",
+      "appearance": "Mandalorian"
+      }
   ],
   "planets": [
     {
