@@ -32,8 +32,8 @@ const layout = {
 };
 
 const layout2 = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 24 },
+  // labelCol: { span: 8 },
+  wrapperCol: { offset: 8,span: 16 },
 };
 
 const layout3 = {
@@ -61,9 +61,14 @@ const FormList = () => {
   // console.log(form)
 
   return (
-    <Form form={form} onFinish={onFinish} {...layout}>
+    <Form
+      form={form}
+      onFinish={onFinish}
+      {...layout}
+      className="form-list--color"
+    >
       <PageHeaderWrapper
-        // content={formatMessage({ id: "feature-new.page-header-content" })}
+      // content={formatMessage({ id: "feature-new.page-header-content" })}
       >
         <Card bordered={false}>
           <Row>
@@ -81,9 +86,9 @@ const FormList = () => {
                 ]}
               >
                 <Input
-                  // placeholder={formatMessage({
-                  //   id: "feature-new.form.name.placeholder",
-                  // })}
+                // placeholder={formatMessage({
+                //   id: "feature-new.form.name.placeholder",
+                // })}
                 />
               </Form.Item>
             </Col>
@@ -93,26 +98,28 @@ const FormList = () => {
             <Col span={16}>
               <Form.List
                 name="featureOption"
-                // rules={[
-                //   {
-                //     validator: async (_, featureOption) => {
-                //       if (!featureOption) {
-                //         return Promise.reject(new Error('Proszę wpisać przynajmniej jedną opcję cechy'));
-                //       }
-                //     },
-                //   },
-                // ]}
+                rules={[
+                  {
+                    validator: async (_, featureOption) => {
+                      if (!featureOption) {
+                        return Promise.reject(
+                          new Error(
+                            "Proszę wpisać przynajmniej jedną opcję cechy"
+                          )
+                        );
+                      }
+                    },
+                  },
+                ]}
               >
-                {(fields, { add, remove }) => (
+                {(fields, { add, remove }, {errors}) => (
                   <>
                     {fields.map((field, index) => (
                       <Form.Item
-                        // label={formatMessage({
-                        //   id: "feature-new.form.name.label",
-                        // })}
+                        label="Opcja cechy"
                         required={false}
                         key={field.key}
-                        {...layout2}
+                        
                       >
                         <Form.Item
                           {...field}
@@ -127,8 +134,7 @@ const FormList = () => {
                           noStyle
                         >
                           <Input
-                            placeholder="Opcja cechy"
-                            style={{ width: "60%" }}
+                            
                           />
                         </Form.Item>
                         {fields.length > 1 ? (
@@ -140,21 +146,20 @@ const FormList = () => {
                       </Form.Item>
                     ))}
                     <Form.Item
-                      // label={formatMessage({
-                      //   id: "feature-new.form.name.label",
-                      // })}
-                      {...layout2}
+                      
+                      {...tailLayout}
                     >
                       <Button
+                        
                         type="dashed"
                         onClick={() => add()}
-                        style={{ width: "60%" }}
+                        style={{ width: "100%" }}
                         icon={<PlusOutlined />}
                       >
-                        Dodaj cechę
+                        Dodaj opcję cechy
                       </Button>
 
-                      {/* <Form.ErrorList errors={errors} /> */}
+                      <Form.ErrorList errors={errors} />
                     </Form.Item>
                   </>
                 )}
@@ -166,7 +171,7 @@ const FormList = () => {
             <Col span={16}>
               <Form.Item {...tailLayout}>
                 <Button type="primary" onClick={onSubmit}>
-                  {/* <FormattedMessage id="feature-new.form.save.label" /> */}
+                  Submit
                 </Button>
               </Form.Item>
             </Col>
