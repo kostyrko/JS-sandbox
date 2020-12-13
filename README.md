@@ -27,6 +27,22 @@ JavaScript apps based on online tutorials
 
     2.4.1 User's Avatar Seeker (by [@kostyrko](https://github.com/kostyrko)) [DEMO](https://codepen.io/mkostyrko/full/vYLrGpm)
 
+    2.5 fake REST API
+
 3. Testing
 
     3.1 Jest -> source video: [Jest - Napisz pierwszy test funkcji JavaScript](https://www.youtube.com/watch?v=gX440uva4NU) with a small alteration (by [@kostyrko](https://github.com/kostyrko)) to fit [JEST](https://jestjs.io/)
+
+
+4. React
+
+
+5. Redux
+
+
+6. TypeScript
+
+
+7. Angular
+
+    7.1 PierwszyProjekt - tzw. "To do list źródło": [Angular - kompletny kurs od podstaw - nowa edycja 2020](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw/), [Angular,Materialize]
