@@ -15,14 +15,27 @@
       class="col s8"
       type="text"
       placeholder="Dodaj zadanie i datę wykonania"
+      #nameInput
     />
-    <input class="col s2 disabled" type="date" />
-    <button class="btn-floating">+</button>
+    <input class="col s2 disabled" type="date" #dateInput />
+    <button
+      class="btn-floating"
+      (click)="
+        createTask(nameInput.value, dateInput.value);
+        dateInput.value = '';
+        nameInput.value = ''
+      "
+    >
+      +
+    </button>
   </div>
 
   <ul class="collection">
-    <li class="collection-item row">
-      <span class="col s10">1 Siłownia - 11.07 czwartek</span>
+    <li class="collection-item row" *ngFor="let task of tasks; let i = index">
+      <span class="col s10">
+        {{ i + 1 }} {{ task.name }} -
+        {{ task.deadline | date: 'd.MM EEEE':'':'pl' }}
+      </span>
       <div class="col s2 right-align">
         <button class="btn-floating btn-small red">
           <i class="material-icons">remove</i>
@@ -39,12 +52,12 @@
 
   <h1>Dzisiaj brak zadań :-)</h1>
 
-  <button class="btn red">Wyczyść</button>
+  <button class="btn red" (click)="clearTasks()">Wyczyść</button>
 
   <footer class="page-footer mt-5">
     <div class="footer-copyright">
       <div class="container">
-        {{config?.date | date: 'yyyy'}} {{ config?.footer }}
+        {{ config?.date | date: 'yyyy' }} {{ config?.footer }}
       </div>
     </div>
   </footer>
