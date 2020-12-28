@@ -7,6 +7,8 @@ import { Task } from './task';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  taskName = 'Tu wpisz zadanie';
+  taskDate = '';
   // taskName: string; // tu będzie przechowywana nazwa zadania
   config: { [key: string]: string | Date } = null; // przechowuje info o konfiguracji aplikacji, których wartość jest stringiem, a wartość przypisana do klucza jest stringiem lub datą
   tasks: Task[] = [
@@ -42,12 +44,14 @@ export class AppComponent {
   //   this.taskName = target.value;
   // }
 
-  createTask(name:string, deadline:string) {
+  createTask() {
     const task: Task = {
-      name,
-      deadline,
+      name: this.taskName,
+      deadline: this.taskDate,
       done: false,
-    }
-    this.tasks.push(task)
+    };
+    this.tasks.push(task);
+    this.taskName = '';
+    this.taskDate = '';
   }
 }
