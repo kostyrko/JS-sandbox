@@ -13,6 +13,13 @@ export class ProfileEditorComponent {
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
+    // formularz zagnieżdżony
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
   });
   // onSubmit() przechwytuje dane z formularza
   onSubmit() {
