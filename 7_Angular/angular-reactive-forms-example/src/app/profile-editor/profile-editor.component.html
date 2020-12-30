@@ -1,39 +1,39 @@
 <!-- stworzenie widoku grupy elementów formularza -->
 <!-- FormGroup nasłuchuje wydarzenia typu submit w formularzu i emituję dyrektywę ngSubmit, którą można połączyć z wywołaniem zwrotnym -> onSubmit() przechwytuje dane z formularza -->
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-  
   <label>
     First Name:
-    <input type="text" formControlName="firstName">
+    <!-- Walidacja: wskazanie na walidację = required-->
+    <input type="text" formControlName="firstName" required />
   </label>
 
   <label>
     Last Name:
-    <input type="text" formControlName="lastName">
+    <input type="text" formControlName="lastName" />
   </label>
 
   <!-- szablon zagnieżdżonego formularza -->
   <div formGroupName="address">
     <h3>Address</h3>
-  
+
     <label>
       Street:
-      <input type="text" formControlName="street">
+      <input type="text" formControlName="street" />
     </label>
-  
+
     <label>
       City:
-      <input type="text" formControlName="city">
+      <input type="text" formControlName="city" />
     </label>
-    
+
     <label>
       State:
-      <input type="text" formControlName="state">
+      <input type="text" formControlName="state" />
     </label>
-  
+
     <label>
       Zip Code:
-      <input type="text" formControlName="zip">
+      <input type="text" formControlName="zip" />
     </label>
   </div>
 
@@ -45,9 +45,9 @@
     <button (click)="updateProfile()">Update Profile</button>
   </p>
 </form>
-
-
-<!-- Wyświetlenie danych formularza przy pomocy JsonPipe -->
+<!-- Wyświetlenie statusu walidacji -->
 <p>
-  Value: {{ profileForm.value | json }}
+  Form Status: {{ profileForm.status }}
 </p>
+<!-- Wyświetlenie danych formularza przy pomocy JsonPipe -->
+<p>Value: {{ profileForm.value | json }}</p>

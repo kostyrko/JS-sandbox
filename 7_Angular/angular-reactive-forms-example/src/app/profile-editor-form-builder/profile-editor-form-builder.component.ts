@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 // zaimportowanie klasy FormBuilder
 import { FormBuilder } from '@angular/forms';
 
+// import klasy Validators
+import { Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-profile-editor-form-builder',
   templateUrl: './profile-editor-form-builder.component.html',
@@ -11,7 +14,8 @@ import { FormBuilder } from '@angular/forms';
 export class ProfileEditorFormBuilderComponent  {
   // stworzenie instancji BudowniczegoFormularzy + metoda group oraz zdefiniowanie właściwości modelu // tu wartości są przechowywane w formie tablic
   profileForm = this.fb.group({
-    firstName: [''],
+    // dodanie walidacji do elementu formularza
+    firstName: ['', Validators.required],
     lastName: [''],
     address: this.fb.group({
       street: [''],
