@@ -40,6 +40,10 @@
   <!-- przycisk odpowiedzialny za wywołanie onSubmit() -->
   <button type="submit" [disabled]="!profileForm.valid">Submit</button>
 
+  <!-- Przycisk wywołujący metodę odpowiedzialną za aktualizacje wartości formularza -->
+  <p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>
 </form>
 
 

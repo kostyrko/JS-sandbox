@@ -26,4 +26,13 @@ export class ProfileEditorComponent {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
   }
+  // metoda odpowiadająca za aktualizację wartości formularza wykorzystując patchValue()
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street'
+      }
+    });
+  }
 }
