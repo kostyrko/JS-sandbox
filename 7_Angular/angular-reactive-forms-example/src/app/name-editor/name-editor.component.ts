@@ -11,7 +11,7 @@ export class NameEditorComponent {
   // stworzenie nowej instancji klasy odpowiedzialnej za kontrolę formularza
   name = new FormControl('');
 
-  // metoda odpowiedzialna za programatyczną aktualizację formularza (wykorzystuje metodę setValue())
+  // metoda odpowiedzialna za programistyczną aktualizację formularza (wykorzystuje metodę setValue())
   updateName() {
     this.name.setValue('Nancy');
   }
