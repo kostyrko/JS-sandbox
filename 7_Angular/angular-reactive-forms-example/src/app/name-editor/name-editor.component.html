@@ -1,7 +1,15 @@
+<!-- zarejestrowanie kontroli w szablonie -->
 <label>
   Name:
   <input type="text" [formControl]="name">
 </label>
+
+<!-- displaying a form control value -->
 <p>
   Value: {{ name.value }}
+</p>
+
+<!-- przycisk odpowiedzialny za programatyczną aktualizację formularza  -->
+<p>
+  <button (click)="updateName()">Update Name</button>
 </p>
