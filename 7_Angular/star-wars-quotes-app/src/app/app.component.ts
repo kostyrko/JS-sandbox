@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'star-wars-quotes-app';
+
+  // przechowuje wartość zw. z dodawaniem klasy
+  showForm = false
+  // metoda zmieniająca wartość przechowywaną w showForm
+  onSwitchForm(): void {
+    this.showForm = !this.showForm;
+  }
 }
