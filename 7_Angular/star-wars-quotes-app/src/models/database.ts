@@ -3,7 +3,7 @@ import { Quotation } from './quotations';
 export const QUOTES: Quotation[] = [
   {
     author: 'Leia Organa',
-    sentence: 'THelp me, Obi-Wan Kenobi. You’re my only hope',
+    sentence: 'Help me, Obi-Wan Kenobi. You’re my only hope',
     votes: -4,
   },
   {

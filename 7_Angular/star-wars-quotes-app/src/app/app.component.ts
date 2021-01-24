@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { QUOTES } from 'src/models/database';
+import { Quotation } from 'src/models/quotations';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'star-wars-quotes-app';
+
+  quotes: Quotation[] = QUOTES
 
   // przechowuje wartość zw. z dodawaniem klasy
   showForm = false
