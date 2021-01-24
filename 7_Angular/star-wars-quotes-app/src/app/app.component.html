@@ -63,21 +63,26 @@
       <div class="col s12">
         <h5>Najlepsze</h5>
         <div class="collection">
-          <p class="collection-item">
-            <span class="blue lighten-4 badge">7</span>
-            Jeśli nie chcesz mojej zguby, krrrokodyla daj mi luby.<br />
-            <span class="blue-text">Aleksander Fredro</span>
-          </p>
+          <!-- ngFor i ngIf nie może być razem dlatego wykorzystuje się ng-container -->
+          <ng-container *ngFor='let quotation of quotes' >
+            <p class="collection-item" *ngIf="quotation.votes > 0">
+              <span class="blue lighten-4 badge">{{quotation.votes}}</span>
+              {{quotation.sentence}}<br />
+              <span class="blue-text">{{quotation.author}}</span>
+            </p>
+          </ng-container>
         </div>
       </div>
       <div class="col s12">
         <h5>Najgorsze</h5>
         <div class="collection">
-          <p class="collection-item">
-            <span class="blue lighten-4 badge">-2</span>
-            Bądź dobrej myśli, bo po co być złej.<br />
-            <span class="blue-text">Stanisław Lem</span>
-          </p>
+          <ng-container *ngFor='let quotation of quotes' >
+            <p class="collection-item" *ngIf="quotation.votes < 0">
+              <span class="blue lighten-4 badge">{{quotation.votes}}</span>
+              {{quotation.sentence}}<br />
+              <span class="blue-text">{{quotation.author}}</span>
+            </p>
+          </ng-container>
         </div>
       </div>
     </div>
