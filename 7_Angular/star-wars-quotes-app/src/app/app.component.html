@@ -1,5 +1,5 @@
 <!-- Nagłówek -->
-<app-navbar></app-navbar>
+<app-navbar title="Najlepsze cytaty"></app-navbar>
 <!-- koniec nagłówka -->
 
 <div class="container q-container">
@@ -56,8 +56,8 @@
 
     <!-- Sekcja rankigów -->
     <div class="col s4">
-      <app-ranking [quotes]="bestQuotes()"></app-ranking>
-      <app-ranking [quotes]="worstQuotes()"></app-ranking>
+      <app-ranking [quotes]="bestQuotes()" title="Najlepsze" ></app-ranking>
+      <app-ranking [quotes]="worstQuotes()" title="Najgorsze"></app-ranking>
     </div>
     <!-- Sekcja rankigów -->
   </div>

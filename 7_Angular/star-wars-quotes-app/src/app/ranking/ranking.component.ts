@@ -9,4 +9,6 @@ import { Quotation } from 'src/models/quotations';
 export class RankingComponent {
   @Input()
   quotes: Quotation[];
+  @Input()
+  title: string;
 }

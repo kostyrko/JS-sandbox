@@ -25,7 +25,6 @@ export class AppComponent {
     quotation.votes += value;
   }
 
-
   // zwraca tylko najlepsze cytaty
   bestQuotes() {
     return this.quotes.filter(q => q.votes > 0);
