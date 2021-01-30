@@ -24,4 +24,14 @@ export class AppComponent {
   addVote(quotation: Quotation, value: number) {
     quotation.votes += value;
   }
+
+
+  // zwraca tylko najlepsze cytaty
+  bestQuotes() {
+    return this.quotes.filter(q => q.votes > 0);
+  }
+  // zwraca tylko najgorsze cytaty
+  worstQuotes() {
+    return this.quotes.filter(q => q.votes < 0);
+  }
 }
