@@ -4,10 +4,10 @@
 
 <div class="container q-container">
   <!--Dodawanie cytatu-->
-  <!-- Odwołanie się do metody onSwitchForm() z klasy form przy pomocy referencji szablonu (musi być metodą publiczną, z prywatną nie działa) -->
-  <button class="btn-floating teal add-button" (click)="form.onSwitchForm()" >
+  
+  <app-button customClasses="btn-floating teal add-button" (clickButton)="form.onSwitchForm()">
     <i class="material-icons">add</i>
-  </button>
+  </app-button>
   <!-- #form - referencja szablonu -->
   <app-form #form (newQuotation)="onNewQuotation($event)"></app-form>
   <!-- Koniec dodawania cytatu -->
@@ -30,13 +30,14 @@
             </div>
             <div class="card-action right-align">
               <span class="badge grey darken-2 left white-text">{{quotation.votes}}</span>
-              <button class="btn blue mr-5" (click)="addVote(quotation, +1)">
+              
+              <app-button customClasses="btn blue mr-5" (click)="addVote(quotation, +1)">
                 <i class="material-icons">exposure_plus_1</i>
-              </button>
+              </app-button>
 
-              <button class="btn brown" (click)="addVote(quotation, -1)">
+              <app-button customClasses="btn brown" (click)="addVote(quotation, -1)">
                 <i class="material-icons">exposure_neg_1</i>
-              </button>
+              </app-button>
             </div>
           </div>
 
