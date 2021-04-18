@@ -3,9 +3,10 @@
     <app-question></app-question>
   </div>
   <div class="col s6">
-    <app-answers></app-answers>
+    <!-- property title oraz words - lista nouns/getter z komponentu rodzica (@Input) -->
+    <app-answers title="Nouns" [words]="nouns"></app-answers>
   </div>
   <div class="col s6">
-    <app-answers></app-answers>
+    <app-answers title="Verbs" [words]="verbs"></app-answers>
   </div>
 </div>
