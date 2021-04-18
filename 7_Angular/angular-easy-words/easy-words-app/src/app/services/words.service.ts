@@ -7,13 +7,13 @@ import { WordType, Type } from '../data/models';
 })
 export class WordsService {
 
-  // zdefiniowanie tablic jako prywatnych i niewidocznych (do ich wydobycia poniższe metody)
+  // zdefiniowanie tablic jako prywatnych i niewidocznych po za klasą (do ich wydobycia poniższe metody)
   private words: WordType[] = [];
   private nouns: WordType[] = [];
   private verbs: WordType[] = [];
 
-  constructor() { 
-    // zainicjowanie
+  constructor() {
+    // zainicjowanie zawartości tablicy przechowującej słowa
     this.words = WORDS;
   }
 
@@ -38,6 +38,7 @@ export class WordsService {
   }
 
   check() {
+    // word.correct true albo false jeśli typ słowa jest równy tej grupie do, której został przypisany
     this.nouns.map(word => (word.correct = word.type === Type.NOUN));
     this.verbs.map(word => (word.correct = word.type === Type.VERB));
   }
