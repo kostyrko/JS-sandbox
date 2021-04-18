@@ -7,7 +7,7 @@ import { WordType, Type } from '../data/models';
 })
 export class WordsService {
 
-  // zdefiniowanie tablic jako prywatnych i niewidocznych (do ich wydobycia poniższe gettery)
+  // zdefiniowanie tablic jako prywatnych i niewidocznych (do ich wydobycia poniższe metody)
   private words: WordType[] = [];
   private nouns: WordType[] = [];
   private verbs: WordType[] = [];
@@ -39,6 +39,6 @@ export class WordsService {
 
   check() {
     this.nouns.map(word => (word.correct = word.type === Type.NOUN));
-    this.nouns.map(word => (word.correct = word.type === Type.VERB));
+    this.verbs.map(word => (word.correct = word.type === Type.VERB));
   }
 }
