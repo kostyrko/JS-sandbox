@@ -15,6 +15,7 @@ export class AppComponent {
 
   add(): void {
     // przekazanie informacji z inputa korzystając z metody serwisu
+    console.log(this.person)
     this.dataService.addPerson(this.person)
   }
 }
