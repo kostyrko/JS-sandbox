@@ -9,16 +9,10 @@ import { WordsService } from './services/words.service';
 export class AppComponent {
   title = 'easy-words-app';
 
+  // pobranie Observable na starcie i subskrypcja do niego
+  nouns = this.wordsService.getNouns();
+  verbs = this.wordsService.getVerbs();
+
   constructor(private wordsService: WordsService) {}
 
-  // bezpośredni dostęp do zawartości serwisu
-  // getter rzeczowników
-  get nouns() {
-    return this.wordsService.getNouns()
-  }
-
-  // getter czasowników
-  get verbs() {
-    return this.wordsService.getVerbs()
-  }
 }

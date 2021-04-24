@@ -3,10 +3,10 @@
     <app-question></app-question>
   </div>
   <div class="col s6">
-    <!-- property title oraz words - lista nouns/getter z komponentu rodzica (@Input) -->
-    <app-answers title="Nouns" [words]="nouns"></app-answers>
+    <!-- skoro observable to async pipe jest potrzebny -->
+    <app-answers title="Nouns" [word]="nouns | async"></app-answers>
   </div>
   <div class="col s6">
-    <app-answers title="Verbs" [words]="verbs"></app-answers>
+    <app-answers title="Verbs" [word]="verbs | async"></app-answers>
   </div>
 </div>

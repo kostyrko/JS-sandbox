@@ -6,16 +6,17 @@ import { WordType } from 'src/app/data/models';
   templateUrl: './answers.component.html',
   styleUrls: ['./answers.component.css']
 })
-export class AnswersComponent implements OnInit {
+export class AnswersComponent {
 
   // nazwa listy verbs albo nouns
   @Input() title: string;
-  // przechowuję listę przypisanych słów
-  @Input() words: WordType[];
+  // przytrzyma pojedynczy obiekt
+  words: WordType[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  // tzw setter - odbiera jeden element z Observable (na początku może być pusty)
+  @Input() set word(word: WordType) {
+    if (word) {
+      this.words.push(word);
+    }
   }
-
 }

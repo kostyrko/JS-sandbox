@@ -1,45 +1,55 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { WORDS } from '../data/data-base';
 import { WordType, Type } from '../data/models';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordsService {
 
-  // zdefiniowanie tablic jako prywatnych i niewidocznych po za klasą (do ich wydobycia poniższe metody)
-  private words: WordType[] = [];
-  private nouns: WordType[] = [];
-  private verbs: WordType[] = [];
+  // BehaviorSubject rozwiązuje kwestię asynchroniczności
+  private words = new BehaviorSubject<WordType[]>([]);
+  private nouns = new Subject<WordType>();
+  private verbs= new Subject<WordType>();
 
   constructor() {
     // zainicjowanie zawartości tablicy przechowującej słowa
-    this.words = WORDS;
+    setTimeout(()=> {
+      // inicjalizacja beh. subject
+      this.words.next(WORDS)
+    }, 2000);
   }
 
-  getWords(): WordType[] {
+  getWords(): BehaviorSubject<WordType[]> {
     return this.words;
   }
 
-  getNouns(): WordType[] {
-    return this.nouns;
+  getNouns(): Observable<WordType> {
+    return this.nouns.asObservable().pipe(
+      map (word => {
+        word.correct = word.type === Type.NOUN;
+        return word
+      })
+    );
   }
 
-  getVerbs(): WordType[] {
-    return this.verbs;
+  getVerbs(): Observable<WordType> {
+    return this.verbs.asObservable().pipe(
+      map (word => {
+        word.correct = word.type === Type.VERB;
+        return word
+      })
+    );
   }
 
   addNoun(value: WordType): void {
-    this.nouns.push(value);
+    this.nouns.next(value);
   }
 
   addVerb(value: WordType): void {
-    this.verbs.push(value);
+    this.verbs.next(value);
   }
 
-  check() {
-    // word.correct true albo false jeśli typ słowa jest równy tej grupie do, której został przypisany
-    this.nouns.map(word => (word.correct = word.type === Type.NOUN));
-    this.verbs.map(word => (word.correct = word.type === Type.VERB));
-  }
 }
