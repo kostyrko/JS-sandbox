@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscribable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { WordType } from 'src/app/data/models';
 import { WordsService } from 'src/app/services/words.service';
 
@@ -8,15 +7,11 @@ import { WordsService } from 'src/app/services/words.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit, OnDestroy {
+export class QuestionComponent implements OnInit {
 
   // przechowuje jedno słowo, wyświetlane w danym momencie
   // ma postać obiektu WordType zdefiniowane w models.ts
   word: WordType = null;
-
-  // pobranie listy oraz przypisanie jej w komponencie
-  private words = [];
-  private subscription: Subscription;
 
   constructor(
     // wstrzyknięcie komponentu (@Injectable({providedIn: 'root'})) więc tu nie musi być podany w tablicy providers
@@ -24,22 +19,14 @@ export class QuestionComponent implements OnInit, OnDestroy {
     private wordsService: WordsService
   ) { }
 
-
   ngOnInit(): void {
-    // pobieranie słów i przypisanie fx wpisującej pobrane do listy znajdującje sie w komponencie
-    this.subscription = this.wordsService.getWords().subscribe((words: WordType[])=> {
-      this.words = words;
-      this.fetchWord();
-    })
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // wywołanie metody w celu pobrania słowa
+    this.fetchWord();
   }
 
   // pobiera element z listy oraz go usuwa (shift())
   private fetchWord(): void {
-    this.word = this.words.shift();
+    this.word = this.wordsService.getWords().shift();
   }
 
   // dodanie słowa do zbioru (tablicy) nouns znajdującej się serwisie WordsService
@@ -54,4 +41,8 @@ export class QuestionComponent implements OnInit, OnDestroy {
     this.fetchWord();
   }
 
+  // odwołanie się do metody sprawdzającej poprawność przypisani słów znajdującej się serwisie WordsService
+  check(): void {
+    this.wordsService.check();
+  }
 }
