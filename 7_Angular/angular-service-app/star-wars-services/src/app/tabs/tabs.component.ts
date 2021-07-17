@@ -3,17 +3,31 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.css']
+  styleUrls: ['./tabs.component.css'],
 })
 export class TabsComponent implements OnInit {
-  characters:{} = [
-    {name: 'Luke Skywalker', side: ''},
-    {name: 'Darth Vader', side: ''}
+  characters = [
+    { name: 'Luke Skywalker', side: '' },
+    { name: 'Darth Vader', side: '' },
   ];
 
-  constructor() { }
+  chosenList = 'all';
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  onChoose(side: string) {
+    this.chosenList = side;
   }
 
+  // gets a copy of characters
+  getCharacters() {
+    if(this.chosenList === 'all') {
+      return this.chosenList.slice();
+    }
+    return this.characters.filter((char) => {
+      return char.side === this.chosenList;
+    });
+  }
 }
