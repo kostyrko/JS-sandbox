@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs.component.css'],
 })
 export class TabsComponent implements OnInit {
-  characters = [
+  characters: Array<any> = [
     { name: 'Luke Skywalker', side: '' },
     { name: 'Darth Vader', side: '' },
   ];
@@ -24,7 +24,7 @@ export class TabsComponent implements OnInit {
   // gets a copy of characters
   getCharacters() {
     if(this.chosenList === 'all') {
-      return this.chosenList.slice();
+      return this.characters.slice();
     }
     return this.characters.filter((char) => {
       return char.side === this.chosenList;
