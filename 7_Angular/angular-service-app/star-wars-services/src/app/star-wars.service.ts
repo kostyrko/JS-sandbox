@@ -1,25 +1,20 @@
+import { Injectable } from '@angular/core';
+import { LogService } from './log.service';
+
+@Injectable()
 export class StarWarsService {
   // private not accessible outside of class
   private characters = [
     { name: 'Luke Skywalker', side: '' },
     { name: 'Han Solo', side: '' },
     { name: 'Leia Organa', side: '' },
-    // { name: 'Chewbacca', side: '' },
-    // { name: 'R2-D2', side: '' },
-    // { name: 'Anakin Skywalker', side: '' },
-    // { name: 'Obi-Wan Kenobi', side: '' },
-    // { name: 'Mace Windu', side: '' },
-    // { name: 'Yoda', side: '' },
-    // { name: 'Jango Fett', side: '' },
-    // { name: 'Jar Jar Binks', side: '' },
-    // { name: 'Greedo', side: '' },
-    // { name: 'Palpatine', side: '' },
-    // { name: 'Darth Vader', side: '' },
-    // { name: 'Count Dooku', side: '' },
-    // { name: 'Boba Fett', side: '' },
-    // { name: 'Maul', side: '' },
-    // { name: 'Ki-Adi-Mundi', side: '' },
+    { name: 'Chewbacca', side: '' },
   ];
+  private logService: LogService;
+
+  constructor(logService: LogService){
+    this.logService = logService;
+  }
 
   // gets a copy of characters
   getCharacters(chosenList: any) {
@@ -37,5 +32,6 @@ export class StarWarsService {
       return char.name === charInfo.name;
     })
     this.characters[pos].side = charInfo.side;
+    this.logService.writeLog('Changed side of ' + charInfo.name + ' to ' + charInfo.side);
   }
 }
