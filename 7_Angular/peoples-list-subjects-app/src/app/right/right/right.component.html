@@ -1,6 +1,0 @@
-<h1>Subject</h1>
- <!-- dane są przesyłane jeszcze przed subskrypcją więc lista nie pojawia się na init i dopiero po zmianie -->
-<ul>
-  <!-- persons jest Observable i on przechowuje liste a nie jest listą stąd odwołanie się do pipa async, który przerobi obiekt na listę - to rozwiązanie omija subscribe i unsubscribe -->
-  <li *ngFor="let p of persons | async">{{p.firstName}} - {{p.lastName}}</li>
-</ul>
