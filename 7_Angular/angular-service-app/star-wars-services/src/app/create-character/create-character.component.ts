@@ -6,7 +6,7 @@ import { StarWarsService } from '../star-wars.service';
   templateUrl: './create-character.component.html',
   styleUrls: ['./create-character.component.css']
 })
-export class CreateCharacterComponent implements OnInit {
+export class CreateCharacterComponent {
 
   availableSides = [{display: 'None', value: ''}, {display: 'Light', value: 'light'},{display: 'Dark', value: 'dark'}]
   swService: StarWarsService;
@@ -16,10 +16,10 @@ export class CreateCharacterComponent implements OnInit {
     this.swService = swService;
   }
 
-  ngOnInit(): void {
-  }
-
    onSubmit(submittedForm: any) {
+     if (submittedForm.invalid) {
+       return;
+     }
      this.swService.addCharacter(submittedForm.value.name, submittedForm.value.side);
    }   
 }
