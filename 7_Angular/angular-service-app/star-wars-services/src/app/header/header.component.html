@@ -1,0 +1,12 @@
+<ul class="nav nav-pills">
+    <!-- add active class when link active -->
+    <!-- active only when exactly and not only part of the path -->
+  <li class="nav-item" routerLinkActive="active"
+
+  [routerLinkActiveOptions]="{exact: true}">
+    <a class="nav-link" routerLink="/">Star Wars Characters</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="/new-character"> New Character</a>
+  </li>
+</ul>
