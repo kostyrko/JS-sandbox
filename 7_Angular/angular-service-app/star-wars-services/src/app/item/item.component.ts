@@ -19,8 +19,6 @@ export class ItemComponent implements OnInit {
   }
 
   onAssign(side: string) {
-    console.log('item component ->', {name: this.character.name, side: side})
-    // this.sideAssigned.emit({name: this.character.name, side: side})
     this.swService.onSideChosen({name: this.character.name, side: side})
   }
 }
