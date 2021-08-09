@@ -28,7 +28,6 @@ export class ListComponent implements OnInit, OnDestroy {
     // params of the activatedRoute is an observable and by default it can be subscribed
     this.activatedRoute.params.subscribe(params => {
       this.characters = this.swService.getCharacters(params.side);
-
       this.loadedSide = params.side;
     });
     this.subscription = this.swService.charactersChange.subscribe(

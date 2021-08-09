@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { LogService } from './log.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class StarWarsService {
@@ -12,11 +14,25 @@ export class StarWarsService {
     { name: 'Chewbacca', side: '' },
   ];
   private logService: LogService;
-  // rxj event emiter type // no payload thus void
   charactersChange = new Subject<void>();
+  http: HttpClient;
 
-  constructor(logService: LogService){
+  constructor(logService: LogService, http: HttpClient){
     this.logService = logService;
+    this.http = http;
+  }
+
+  fetchCharacters(){
+    this.http.get<any>('https://swapi.dev/api/people/')
+    .subscribe(response => {
+      const extractedChars = response.results
+      const chars = extractedChars.map((char:any) => {
+        return { name: char.name, side: ''}
+      })
+      this.characters = chars;
+      // inform the app that the data has changed
+      this.charactersChange.next();
+    })
   }
 
   // gets a copy of characters
@@ -53,3 +69,4 @@ export class StarWarsService {
     this.characters.push({name, side});
   }
 }
+
